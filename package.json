@@ -1,0 +1,32 @@
+{
+  "name": "geotail",
+  "version": "1.0.0",
+  "description": "An invisible electron app that tracks your geolocation and logs it to disk",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/zeke/geotail",
+  "keywords": [
+    "electron",
+    "history",
+    "cartography",
+    "geo",
+    "location",
+    "travel"
+  ],
+  "author": "zeke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/geotail/issues"
+  },
+  "homepage": "https://github.com/zeke/geotail#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
+    "electron-config": "^0.2.1",
+    "geolocation-stream": "0.0.1",
+    "geoposition-to-object": "^1.0.0"
+  }
+}
