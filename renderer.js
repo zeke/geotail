@@ -4,16 +4,37 @@ const $ = require('jquery')
 const Config = require('electron-config')
 const config = window.config = new Config()
 const history = window.history = config.get('history') || []
+const yo = window.yo = require('yo-yo')
 
-movement.on('data', function(position) {
-  position = objectify(position)
-  if (history.length === 0 || position.timestamp !== history[history.length-1].timestamp) {
-    history.push(position)
-  }
-  config.set('history', history)
-  console.log(JSON.stringify(history, null, 2))
-})
+document.addEventListener('DOMContentLoaded', init)
 
-movement.on('error', function(err) {
-  console.error(err)
-})
+function init () {
+  movement.on('data', function(position) {
+
+    // turn native geoposition object into a serializable object
+    position = objectify(position)
+
+    // avoid saving duplicates
+    if (history.length === 0 || position.timestamp !== history[history.length-1].timestamp) {
+      history.push(position)
+    }
+
+    // persist to disk
+    config.set('history', history)
+
+    render()
+  })
+
+  movement.on('error', function(err) {
+    console.error(err)
+  })
+
+}
+
+
+function render () {
+  document.getElementById('positions').appendChild(el)
+
+  var el = yo`<li>$foo</li>`
+
+}

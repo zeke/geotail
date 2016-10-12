@@ -14,7 +14,6 @@ An invisible electron app that tracks your geolocation and logs it to disk.
 
 - [electron-prebuilt](https://github.com/electron-userland/electron-prebuilt): Install electron prebuilt binaries for the command-line use using npm
 
-
 ## License
 
 MIT
